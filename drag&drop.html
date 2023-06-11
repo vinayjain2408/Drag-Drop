@@ -11,28 +11,22 @@
 </head>
 <body>
   <div class="container" >
-    <div draggable="true" class="logo" id="one">Item 1</div>
+    <div draggable="true" class="logo" id="one"></div>
     <div draggable="true"class="logo">
-      <input type="text">
-      <button>submit</button>
-      <h1></h1>
+      <h1>Vinay Jain</h1>
     </div>
     <div draggable="true" class="logo"> 
-      <div draggable="true" class="icon" id="1"><i class="fa-solid fa-plus"></i></div>
-      
-      
+      <div draggable="true" class="icon" id="icon">
+        <i class="fa-solid fa-plus"></i></div> 
     </div>
-    <div draggable="true" class="logo" id="second">
-     
-      </h1>
-    </div>
+   
   </div>
   <div class="container drop-area">
-    <!-- <div class="drop-area"></div> -->
   </div>
-  <p class="success-message" style="display: none;">Item successfully dropped!</p>
-  <button onclick="resetContainers()">Reset</button>
-
+  <p class="success-message" >Item successfully dropped!</p>
+  <div class="btn">
+  <button  onclick="resetContainers()">Reset</button>
+</div>
 
 
   <script>
@@ -92,13 +86,7 @@
     let inp = document.querySelector("input")
     let btn = document.querySelector("button")
     let head = document.querySelector("h1")
-
-    btn.onclick = ()=>{
-      head.innerHTML = inp.value
-      console.log("vinay jain")
-    }
-
-    
+ 
   </script>
 </body>
 </html>
