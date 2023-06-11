@@ -6,24 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drag & Drop Example</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="practicedrag&dron.css">
+  <link rel="stylesheet" href="drag&drop.css">
   
 </head>
 <body>
-  <div class="container">
-    <div draggable="true" id="one">Item 1</div>
-    <div draggable="true">
+  <div class="container" >
+    <div draggable="true" class="logo" id="one">Item 1</div>
+    <div draggable="true"class="logo">
       <input type="text">
       <button>submit</button>
       <h1></h1>
     </div>
-    <div draggable="true">
-      <h1>
-      <i class="fa-solid fa-plus"></i>
-    </h1>
+    <div draggable="true" class="logo"> 
+      <div draggable="true" class="icon" id="1"><i class="fa-solid fa-plus"></i></div>
+      
+      
     </div>
-    <div draggable="true">
-      <h1><i class="fa-solid fa-heart"></i></h1>
+    <div draggable="true" class="logo" id="second">
+     
+      </h1>
     </div>
   </div>
   <div class="container drop-area">
@@ -31,6 +32,8 @@
   </div>
   <p class="success-message" style="display: none;">Item successfully dropped!</p>
   <button onclick="resetContainers()">Reset</button>
+
+
 
   <script>
     const draggables = document.querySelectorAll('.container div[draggable=true]');
@@ -40,6 +43,7 @@
     draggables.forEach(draggable => {
       draggable.addEventListener('dragstart', () => {
         draggable.classList.add('dragging');
+        console.log("Vinay jain")
       });
 
       draggable.addEventListener('dragend', () => {
@@ -93,6 +97,8 @@
       head.innerHTML = inp.value
       console.log("vinay jain")
     }
+
+    
   </script>
 </body>
 </html>

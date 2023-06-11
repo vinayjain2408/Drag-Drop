@@ -1,0 +1,218 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag & Drop Example</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .item {
+      width: 200px;
+      height: 50px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      cursor: move;
+    }
+
+    .item.dragging {
+      opacity: 0.5;
+    }
+
+    .drop-area {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .drop-area.highlight {
+      background-color: #eaeaea;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="items-container">
+      <div class="item" draggable="true">Item 1</div>
+      <div class="item" draggable="true">Item 2</div>
+      <div class="item" draggable="true">Item 3</div>
+    </div>
+    <div class="drop-area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+  </div>
+  <p class="success-message" style="display: none;">Item successfully dropped!</p>
+  <button onclick="resetContainers()">Reset</button>
+
+  <script>
+    const itemsContainer = document.querySelector('.items-container');
+    const dropArea = document.querySelector('.drop-area');
+    const successMessage = document.querySelector('.success-message');
+
+    itemsContainer.addEventListener('dragstart', dragStart);
+    itemsContainer.addEventListener('dragend', dragEnd);
+    dropArea.addEventListener('dragover', allowDrop);
+    dropArea.addEventListener('drop', drop);
+    dropArea.addEventListener('dragenter', dragEnter);
+    dropArea.addEventListener('dragleave', dragLeave);
+
+    function dragStart(event) {
+      event.dataTransfer.setData('text/plain', event.target.id);
+      event.target.classList.add('dragging');
+    }
+
+    function dragEnd(event) {
+      event.target.classList.remove('dragging');
+    }
+
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const itemId = event.dataTransfer.getData('text/plain');
+      const item = document.getElementById(itemId);
+      dropArea.appendChild(item);
+      successMessage.style.display = 'block';
+    }
+
+    function dragEnter(event) {
+      event.target.classList.add('highlight');
+    }
+
+    function dragLeave(event) {
+      event.target.classList.remove('highlight');
+    }
+
+    function resetContainers() {
+      dropArea.innerHTML = '';
+      const originalItems = itemsContainer.querySelectorAll('.item');
+      originalItems.forEach(item => {
+        itemsContainer.appendChild(item);
+      });
+      successMessage.style.display = 'none';
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag & Drop Example</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .item {
+      width: 200px;
+      height: 50px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      cursor: move;
+    }
+
+    .item.dragging {
+      opacity: 0.5;
+    }
+
+    .drop-area {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .drop-area.highlight {
+      background-color: #eaeaea;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="items-container">
+      <div class="item" draggable="true">Item 1</div>
+      <div class="item" draggable="true">Item 2</div>
+      <div class="item" draggable="true">Item 3</div>
+    </div>
+    <div class="drop-area" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
+  </div>
+  <p class="success-message" style="display: none;">Item successfully dropped!</p>
+  <button onclick="resetContainers()">Reset</button>
+
+  <script>
+    const itemsContainer = document.querySelector('.items-container');
+    const dropArea = document.querySelector('.drop-area');
+    const successMessage = document.querySelector('.success-message');
+
+    itemsContainer.addEventListener('dragstart', dragStart);
+    itemsContainer.addEventListener('dragend', dragEnd);
+    dropArea.addEventListener('dragover', allowDrop);
+    dropArea.addEventListener('drop', drop);
+    dropArea.addEventListener('dragenter', dragEnter);
+    dropArea.addEventListener('dragleave', dragLeave);
+
+    function dragStart(event) {
+      event.dataTransfer.setData('text/plain', event.target.id);
+      event.target.classList.add('dragging');
+    }
+
+    function dragEnd(event) {
+      event.target.classList.remove('dragging');
+    }
+
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const itemId = event.dataTransfer.getData('text/plain');
+      const item = document.getElementById(itemId);
+      dropArea.appendChild(item);
+      successMessage.style.display = 'block';
+    }
+
+    function dragEnter(event) {
+      event.target.classList.add('highlight');
+    }
+
+    function dragLeave(event) {
+      event.target.classList.remove('highlight');
+    }
+
+    function resetContainers() {
+      dropArea.innerHTML = '';
+      const originalItems = itemsContainer.querySelectorAll('.item');
+      originalItems.forEach(item => {
+        itemsContainer.appendChild(item);
+      });
+      successMessage.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

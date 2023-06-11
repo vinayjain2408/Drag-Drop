@@ -9,8 +9,9 @@
     padding: 2rem;
     margin: 2rem;
   }
+  
 
-  .container div {
+  .container .logo {
     border: 1px solid #ccc;
     padding: 10px;
     cursor: pointer;
@@ -21,6 +22,8 @@
     background-attachment: scroll;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .container div h1.dragging {
@@ -33,4 +36,18 @@
   }
   #one{
     background-image: url(unsplh6.jpg);
+  }
+  #second{
+    background-image: url(unsplh9.jpg);
+  }
+
+  .container .icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid;
   }
