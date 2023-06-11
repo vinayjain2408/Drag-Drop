@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  .container {
+    display: flex;
+    border: 3px solid;
+    padding: 2rem;
+    margin: 2rem;
+  }
+
+  .container div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    width: 200px;
+    height: 150px;
+    margin: 0.5rem;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .container div h1.dragging {
+    opacity: 0.5;
+  }
+
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  #one{
+    background-image: url(unsplh6.jpg);
+  }
